@@ -1,23 +1,27 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-class SumPair {
+/// write an algorithm to return the pairs in an array whos sum quals k 
+public class SumPair {
 
-    public static HashMap<Integer, Integer> sumPair(List<Integer> arr, int sum) {
+    public static Map<Integer, Integer> sumPair(List<Integer> arr, int sum) {
 
         // Logic or magic code starts here
-        
+
         HashMap<Integer, Integer> hm = new HashMap<>();
+        Map<Integer, Integer> result = new HashMap<>();
 
         for (int i = 0; i < arr.size(); i++) {
             
-            int x = sum - arr.get(i);
-            if(!hm.containsKey(x)){
-                hm.put(x, arr.get(i));
-            }
+            Integer x = sum - arr.get(i);
+            if(hm.containsKey(x)){
+                result.put(x, arr.get(i));
+            } 
+            hm.put(x, arr.get(i));
         }
-        return hm;
+        return result;
     }
 
 
@@ -31,9 +35,9 @@ class SumPair {
         arr.add(3);
         arr.add(0);
         arr.add(1);
-        int sum = 8;
+        int sum = 4;
 
-        HashMap<Integer, Integer> result = sumPair(arr, sum);
+        Map<Integer, Integer> result = sumPair(arr, sum);
         System.out.println(result);
         
     }
