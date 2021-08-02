@@ -35,7 +35,7 @@ public class SumPair {
         arr.add(3);
         arr.add(0);
         arr.add(1);
-        int sum = 4;
+        int sum = 8;
 
         Map < Integer, Integer > result = sumPair(arr, sum);
         System.out.println(result);
