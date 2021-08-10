@@ -6,23 +6,49 @@ class LinkedList {
     {
         int data;
         Node next;
+
+        public Node(int data)
+        {
+            this.data = data;
+            next = null;
+        }
     }
 
-    static Node createNewNode(int data)
+    public static Node inserAtHead(Node head, int data)
     {
-        Node temp = new Node();
-        temp.data = data;
-        temp.next = null;  
-        return temp;
+        if(head == null)
+        {
+            head = new Node(data);
+            return head;
+        }
+    
+        Node n = new Node(data);
+        n.data = data;
+        n.next = head;
+        head = n; 
+        return head;
+    }
+
+    public static void printLinkedList(Node head)
+    {
+        while(head !=null )
+        {
+            System.out.println(head.data);
+            head = head.next;
+        }
+     
     }
 
     public static void main(String[] args) {
-        Node head = createNewNode(1);
-        head.next = createNewNode(2);
-        head.next.next = createNewNode(3);
+        Node head = null;
+      
 
-        // System.out.println(head);
-
+        // printLinkedList(head);
+        head = inserAtHead(head, 10);
+        head = inserAtHead(head, 3);
+        head = inserAtHead(head, 6);
+        head = inserAtHead(head, 1);
+        printLinkedList(head);
     }
 
 }
