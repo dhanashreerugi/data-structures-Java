@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "solutions\\stacks",
+        ".",
+        "basic-ds"
+    ]
+}
